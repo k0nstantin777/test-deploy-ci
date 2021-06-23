@@ -1,13 +1,11 @@
 language: php
 php:
-    - '7.4'
     - '8.0'
 install:
     - composer self-update
     - composer install --prefer-source --no-interaction --dev
 script: 
     - vendor/bin/phpunit
-    - php artisan config:clear
 
 notifications: 
     - email: false
