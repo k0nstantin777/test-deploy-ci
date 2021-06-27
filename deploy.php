@@ -3,7 +3,7 @@ namespace Deployer;
 
 require 'recipe/laravel.php';
 require 'contrib/php-fpm.php';
-require 'recipe/rabbit.php';
+require 'contrib/rabbit.php';
 
 set('application', 'Test Deploy CI');
 set('repository', 'git@github.com:k0nstantin777/test-deploy-ci.git');
