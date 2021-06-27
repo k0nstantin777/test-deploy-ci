@@ -30,6 +30,7 @@ set('rabbit', [
     'artisan:migrate',
     'testdb:create',
     'deploy:publish',
+    'deploy:success'
 ]);
 
 
@@ -38,7 +39,7 @@ task('testdb:create', function () {
     run('touch database/test.sqlite');
 });
 
-before('deploy:end', 'deploy:rabbit');
+before('deploy:success', 'deploy:rabbit');
 
 after('deploy:failed', 'deploy:unlock');
 
