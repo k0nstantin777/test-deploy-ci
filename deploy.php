@@ -43,4 +43,4 @@ before('deploy:success', 'deploy:rabbit');
 
 after('deploy:failed', 'deploy:unlock');
 
-after('deploy', 'reload:php-fpm');
+after('deploy', 'php-fpm:reload');
