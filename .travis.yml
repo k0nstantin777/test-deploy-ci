@@ -1,9 +1,7 @@
 language: php
 php:
 - '8.0'
-install:
-- composer self-update
-- composer install --no-interaction
+
 notifications:
 - email: false
 before_install:
@@ -18,6 +16,9 @@ jobs:
     - stage: deploy
       if: env(TYPE) = deploy
       name: "Deploy"
+      install:
+        - composer self-update
+        - composer install --no-interaction
       script: vendor/bin/phpunit
       deploy:
         skip_cleanup: true
@@ -29,7 +30,6 @@ jobs:
     - stage: rollback
       if: env(TYPE) = rollback
       name: "Rollback"
-      script: skip
       deploy:
         provider: script
         script: vendor/bin/dep rollback
