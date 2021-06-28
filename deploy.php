@@ -33,6 +33,10 @@ set('rabbit', [
     'deploy:success'
 ]);
 
+task('rollback', [
+    'artisan:migrate:rollback',
+]);
+
 
 task('testdb:create', function () {
     cd('{{release_or_current_path}}');
@@ -44,3 +48,5 @@ before('deploy:success', 'deploy:rabbit');
 after('deploy:failed', 'deploy:unlock');
 
 after('deploy', 'php-fpm:reload');
+
+after('rollback', 'php-fpm:reload');
