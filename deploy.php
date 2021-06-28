@@ -37,7 +37,6 @@ task('rollback', [
     'artisan:migrate:rollback',
 ]);
 
-
 task('testdb:create', function () {
     cd('{{release_or_current_path}}');
     run('touch database/test.sqlite');
