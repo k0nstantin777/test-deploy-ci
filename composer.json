@@ -9,6 +9,7 @@
         "darkaonline/swagger-lume": "8.*",
         "illuminate/mail": "^8.46",
         "laravel/lumen-framework": "^8.0",
+        "videlalvaro/php-amqplib": "^3.0",
         "vladimir-yuldashev/laravel-queue-rabbitmq": "^11.2"
     },
     "require-dev": {
